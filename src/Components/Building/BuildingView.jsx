@@ -1,12 +1,9 @@
 import React from 'react';
 
-// Modules
-import { Card, Button, Input, Checkbox } from 'antd';
-
 //Style
 
-import lg from '../../assets/imagens/logo.png';
-import img from '../../assets/imagens/imagem.png';
+import logo from '../../assets/imagens/logo_japaratinga.png';
+import trator from '../../assets/imagens/imagem_trator.png';
 import './BuildingStyle.css';
 
 const BuildingView = (props) => {
@@ -17,7 +14,7 @@ const BuildingView = (props) => {
         <div
             style={{
                 height: '100vh',
-                backgroundImage: `url(${img})`,
+                backgroundImage: `url(${trator})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'contain',
                 backgroundPosition: 'right center'
@@ -25,38 +22,41 @@ const BuildingView = (props) => {
             }}
         >
 
-            <div
-                style={{
-                    margin: '20px',
-                }}
+            <div>
+                <img src={logo} style={{marginRight: '60px', marginLeft: '45px', marginTop: '20px', float: 'left'}} />
 
-            >
-                <img src={lg} style={{marginRight: '60px'}} />
+                <div
+                    style={{
+                        float: 'left',
+                        marginTop: '40px',
+                    }}
+                >
+                    {
+                        menu.map(item=>{
+                            console.log(item);
+                            return(
+                                <a
+                                    href='#'
+                                    style={{
 
-                {
-                    menu.map(item=>{
-                        console.log(item);
-                        return(
-                            <a
-                                href='#'
-                                style={{
+                                        fontFamily: 'Roboto',
+                                        fontStyle: 'normal',
+                                        fontWeight: 'normal',
+                                        fontSize: '14px',
+                                        lineHeight: '16px',
+                                        marginRight: '30px',
+                                        // marginTop: '100px',
 
-                                    fontFamily: 'Roboto',
-                                    fontStyle: 'normal',
-                                    fontWeight: 'normal',
-                                    fontSize: '14px',
-                                    lineHeight: '16px',
-                                    marginRight: '20px',
+                                        color: '#52B848',
 
-                                    color: '#52B848',
-
-                                }}
-                            >
-                                {item}
-                            </a>
-                        )
-                    })
-                }
+                                    }}
+                                >
+                                    {item}
+                                </a>
+                            )
+                        })
+                    }
+                </div>
 
             </div>
 
@@ -77,7 +77,7 @@ const BuildingView = (props) => {
                         fontFamily: 'Suez One',
                         fontStyle: 'normal',
                         fontWeight: 'normal',
-                        fontSize: '64px',
+                        fontSize: '62px',
                         lineHeight: '84px',
                         color: '#52B848',
 
@@ -120,6 +120,7 @@ const BuildingView = (props) => {
                         fontSize: '18px',
                         lineHeight: '24px',
                         color: '#52B848',
+                        marginLeft: '8px'
 
                     }}
                 >
